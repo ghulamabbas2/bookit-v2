@@ -13,11 +13,14 @@
     "@types/node": "20.5.9",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
+    "bootstrap": "^5.3.1",
     "mongoose": "^7.5.0",
     "next": "13.4.19",
     "next-connect": "^1.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "react-star-ratings": "^2.3.0",
     "typescript": "5.2.2"
   }
 }
