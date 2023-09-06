@@ -17,8 +17,6 @@ export default async function RoomDetailsPage({ params }: Props) {
     return <Error error={data} />;
   }
 
-  console.log(data);
-
   return <RoomDetails data={data} />;
 }
 
