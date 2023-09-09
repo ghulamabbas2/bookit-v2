@@ -9,6 +9,13 @@ const nextConfig = {
     CLOUDINARY_API_KEY: "",
     CLOUDINARY_API_SECRET: "",
 
+    SMTP_HOST: "sandbox.smtp.mailtrap.io",
+    SMTP_PORT: 2525,
+    SMTP_USER: "",
+    SMTP_PASSWORD: "",
+    SMTP_FROM_EMAIL: "noreply@bookit.com",
+    SMTP_FROM_NAME: "BookIT",
+
     NEXTAUTH_URL: "http://localhost:3000",
     NEXTAUTH_SECRET: "KSDFJKLSDJFLKSDFJSLDKF934KJLDJGDLKGFJDF",
   },
