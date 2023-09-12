@@ -5,6 +5,9 @@ const nextConfig = {
     DB_LOCAL_URI: "mongodb://127.0.0.1:27017/bookit-v2",
     DB_URI: "",
 
+    STRIPE_WEBHOOK_SECRET: "",
+    STRIPE_SECRET_KEY: "",
+
     CLOUDINARY_CLOUD_NAME: "",
     CLOUDINARY_API_KEY: "",
     CLOUDINARY_API_SECRET: "",
@@ -19,7 +22,7 @@ const nextConfig = {
     GEOCODER_API_KEY: "",
     GEOCODER_PROVIDER: "mapquest",
 
-    MAPBOX_ACCESS_TOKEN: "",
+    MAPBOX_ACCESS_TOKEN: "pk..s7SEMmz-uhxzKRFEsh1fVg",
 
     NEXTAUTH_URL: "http://localhost:3000",
     NEXTAUTH_SECRET: "KSDFJKLSDJFLKSDFJSLDKF934KJLDJGDLKGFJDF",

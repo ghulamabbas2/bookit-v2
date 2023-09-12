@@ -37,6 +37,7 @@
     "react-js-pagination": "^3.0.3",
     "react-redux": "^8.1.2",
     "react-star-ratings": "^2.3.0",
+    "stripe": "^13.5.0",
     "typescript": "5.2.2"
   }
 }
