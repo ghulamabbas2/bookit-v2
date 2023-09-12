@@ -1,5 +1,6 @@
 import mongoose, { Schema, Document } from "mongoose";
 import geoCoder from "../utils/geoCoder";
+import { IUser } from "./user";
 
 export interface IImage extends Document {
   public_id: string;
@@ -7,7 +8,7 @@ export interface IImage extends Document {
 }
 
 export interface IReview extends Document {
-  user: mongoose.Schema.Types.ObjectId;
+  user: IUser;
   rating: number;
   comment: string;
 }
@@ -40,7 +41,7 @@ export interface IRoom extends Document {
   images: IImage[];
   category: string;
   reviews: IReview[];
-  user: mongoose.Schema.Types.ObjectId;
+  user: IUser;
   createdAt: Date;
 }
 

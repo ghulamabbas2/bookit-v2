@@ -97,7 +97,9 @@ const BookingDetails = ({ data }: Props) => {
               </div>
 
               <div className="col-5 col-lg-5">
-                <a href="/room/room-id">{booking?.room?.name}</a>
+                <Link href={`/rooms/${booking?.room?._id}`}>
+                  {booking?.room?.name}
+                </Link>
               </div>
 
               <div className="col-4 col-lg-2 mt-4 mt-lg-0">

@@ -6,6 +6,7 @@ const nextConfig = {
     DB_URI: "",
 
     STRIPE_WEBHOOK_SECRET: "",
+
     STRIPE_SECRET_KEY: "",
 
     CLOUDINARY_CLOUD_NAME: "",
@@ -22,7 +23,7 @@ const nextConfig = {
     GEOCODER_API_KEY: "",
     GEOCODER_PROVIDER: "mapquest",
 
-    MAPBOX_ACCESS_TOKEN: "pk..s7SEMmz-uhxzKRFEsh1fVg",
+    MAPBOX_ACCESS_TOKEN: "",
 
     NEXTAUTH_URL: "http://localhost:3000",
     NEXTAUTH_SECRET: "KSDFJKLSDJFLKSDFJSLDKF934KJLDJGDLKGFJDF",
