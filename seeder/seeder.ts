@@ -5,7 +5,9 @@ import { rooms } from "./data";
 
 const seedRooms = async () => {
   try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/bookit-v2");
+    await mongoose.connect(
+      "mongodb+srv://ghulamabbas:ghulamabbas@bookit.nk5ucov.mongodb.net/bookit?retryWrites=true&w=majority"
+    );
 
     await Room.deleteMany();
     console.log("Rooms are deleted");
