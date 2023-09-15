@@ -49,7 +49,7 @@ export const rooms = [
       },
       {
         public_id: "bookit/demo/tvheutup1idr5wi0p5bq",
-        url: "http://res.cloudinary.com/udemy-courses/image/upload/v1693136063/bookit/demo/tvheutup1idr5wi0p5bq.jpg",
+        url: "http://res.cloudinary.com/udemy-courses/image/upload/v1694680598/bookit/demo/tvheutup1idr5wi0p5bq.jpg",
       },
     ],
     category: "Twins",

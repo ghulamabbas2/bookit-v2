@@ -224,3 +224,43 @@ export const allAdminRooms = catchAsyncErrors(async (req: NextRequest) => {
     rooms,
   });
 });
+
+// Get room reviews - ADMIN  =>  /api/admin/rooms/reviews
+export const getRoomReviews = catchAsyncErrors(async (req: NextRequest) => {
+  const { searchParams } = new URL(req.url);
+
+  const room = await Room.findById(searchParams.get("roomId"));
+
+  return NextResponse.json({
+    reviews: room.reviews,
+  });
+});
+
+// Delete room review - ADMIN  =>  /api/admin/rooms/reviews
+export const deleteRoomReview = catchAsyncErrors(async (req: NextRequest) => {
+  const { searchParams } = new URL(req.url);
+
+  const roomId = searchParams.get("roomId");
+  const reviewId = searchParams.get("id");
+
+  const room = await Room.findById(roomId);
+
+  const reviews = room.reviews.filter(
+    (review: IReview) => review?._id.toString() !== reviewId
+  );
+  const numOfReviews = reviews.length;
+
+  const ratings =
+    numOfReviews === 0
+      ? 0
+      : room?.reviews?.reduce(
+          (acc: number, item: { rating: number }) => item.rating + acc,
+          0
+        ) / numOfReviews;
+
+  await Room.findByIdAndUpdate(roomId, { reviews, numOfReviews, ratings });
+
+  return NextResponse.json({
+    success: true,
+  });
+});

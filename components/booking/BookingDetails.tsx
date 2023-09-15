@@ -1,4 +1,7 @@
+"use client";
+
 import { IBooking } from "@/backend/models/booking";
+import { useAppSelector } from "@/redux/hooks";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -11,6 +14,7 @@ interface Props {
 
 const BookingDetails = ({ data }: Props) => {
   const booking = data?.booking;
+  const { user } = useAppSelector((state) => state.auth);
 
   const isPaid = booking?.paymentInfo?.status === "paid" ? true : false;
 
@@ -79,38 +83,51 @@ const BookingDetails = ({ data }: Props) => {
                   </b>
                 </td>
               </tr>
+              {user?.role === "admin" && (
+                <tr>
+                  <th scope="row">Stripe ID:</th>
+                  <td>
+                    <b className="redColor">{booking?.paymentInfo.id}</b>
+                  </td>
+                </tr>
+              )}
             </tbody>
           </table>
 
           <h4 className="mt-5 mb-4">Booked Room:</h4>
 
           <hr />
-          <div className="cart-item my-1">
-            <div className="row my-5">
-              <div className="col-4 col-lg-2">
-                <Image
-                  src={booking?.room?.images[0]?.url}
-                  alt={booking?.room?.name}
-                  height="45"
-                  width="65"
-                />
-              </div>
 
-              <div className="col-5 col-lg-5">
-                <Link href={`/rooms/${booking?.room?._id}`}>
-                  {booking?.room?.name}
-                </Link>
-              </div>
+          {booking?.room ? (
+            <div className="cart-item my-1">
+              <div className="row my-5">
+                <div className="col-4 col-lg-2">
+                  <Image
+                    src={booking?.room?.images[0]?.url}
+                    alt={booking?.room?.name}
+                    height="45"
+                    width="65"
+                  />
+                </div>
 
-              <div className="col-4 col-lg-2 mt-4 mt-lg-0">
-                <p>${booking?.room?.pricePerNight}</p>
-              </div>
+                <div className="col-5 col-lg-5">
+                  <Link href={`/rooms/${booking?.room?._id}`}>
+                    {booking?.room?.name}
+                  </Link>
+                </div>
 
-              <div className="col-4 col-lg-3 mt-4 mt-lg-0">
-                <p>{booking?.daysOfStay} Day(s)</p>
+                <div className="col-4 col-lg-2 mt-4 mt-lg-0">
+                  <p>${booking?.room?.pricePerNight}</p>
+                </div>
+
+                <div className="col-4 col-lg-3 mt-4 mt-lg-0">
+                  <p>{booking?.daysOfStay} Day(s)</p>
+                </div>
               </div>
             </div>
-          </div>
+          ) : (
+            <div className="alert alert-danger">Room no longer exist</div>
+          )}
           <hr />
         </div>
       </div>

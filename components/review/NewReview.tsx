@@ -1,3 +1,4 @@
+import { revalidateTag } from "@/helpers/revalidate";
 import {
   useCanUserReviewQuery,
   usePostReviewMutation,
@@ -22,6 +23,7 @@ const NewReview = ({ roomId }: { roomId: string }) => {
     }
 
     if (isSuccess) {
+      revalidateTag("RoomDetails");
       toast.success("Review posted");
       router.refresh();
     }

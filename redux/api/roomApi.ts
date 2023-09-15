@@ -3,6 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const roomApi = createApi({
   reducerPath: "roomApi",
   baseQuery: fetchBaseQuery({ baseUrl: "/api" }),
+  tagTypes: ["Reviews"],
   endpoints: (builder) => ({
     canUserReview: builder.query({
       query(id) {
@@ -64,6 +65,23 @@ export const roomApi = createApi({
         };
       },
     }),
+    getRoomReviews: builder.query({
+      query(id) {
+        return {
+          url: `admin/rooms/reviews?roomId=${id}`,
+        };
+      },
+      providesTags: ["Reviews"],
+    }),
+    deleteReview: builder.mutation({
+      query({ id, roomId }) {
+        return {
+          url: `/admin/rooms/reviews/?id=${id}&roomId=${roomId}`,
+          method: "DELETE",
+        };
+      },
+      invalidatesTags: ["Reviews"],
+    }),
   }),
 });
 
@@ -75,4 +93,6 @@ export const {
   useUploadRoomImagesMutation,
   useDeleteRoomImageMutation,
   useDeleteRoomMutation,
+  useLazyGetRoomReviewsQuery,
+  useDeleteReviewMutation,
 } = roomApi;
