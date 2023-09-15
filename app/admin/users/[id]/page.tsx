@@ -1,6 +1,5 @@
 import Error from "@/app/error";
 import UpdateUser from "@/components/admin/UpdateUser";
-import RoomDetails from "@/components/room/RoomDetails";
 import { getAuthHeader } from "@/helpers/authHeader";
 
 interface Props {

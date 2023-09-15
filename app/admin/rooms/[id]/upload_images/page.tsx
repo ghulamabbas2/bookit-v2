@@ -1,9 +1,5 @@
 import Error from "@/app/error";
-import Home from "@/components/Home";
-import AllRooms from "@/components/admin/AllRooms";
-import UpdateRoom from "@/components/admin/UpdateRoom";
 import UploadRoomImages from "@/components/admin/UploadRoomImages";
-import { getAuthHeader } from "@/helpers/authHeader";
 
 export const metadata = {
   title: "Upload Room Images - ADMIN",

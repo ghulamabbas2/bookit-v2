@@ -1,8 +1,5 @@
 import dbConnect from "@/backend/config/dbConnect";
-import {
-  deleteRoomImage,
-  uploadRoomImages,
-} from "@/backend/controllers/roomControllers";
+import { deleteRoomImage } from "@/backend/controllers/roomControllers";
 import {
   authorizeRoles,
   isAuthenticatedUser,

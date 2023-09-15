@@ -1,6 +1,5 @@
 import Error from "@/app/error";
 import AllBookings from "@/components/admin/AllBookings";
-import AllRooms from "@/components/admin/AllRooms";
 import { getAuthHeader } from "@/helpers/authHeader";
 
 export const metadata = {

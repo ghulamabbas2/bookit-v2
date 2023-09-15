@@ -1,6 +1,5 @@
 import dbConnect from "@/backend/config/dbConnect";
 import User, { IUser } from "@/backend/models/user";
-import { NextApiRequest, NextApiResponse } from "next";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
