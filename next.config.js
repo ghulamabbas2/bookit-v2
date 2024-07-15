@@ -9,10 +9,13 @@ const nextConfig = {
     STRIPE_WEBHOOK_SECRET: "",
 
     STRIPE_SECRET_KEY: "",
-
-    CLOUDINARY_CLOUD_NAME: "",
+    CLOUDINARY_CLOUD_NAME: "udemy-courses",
     CLOUDINARY_API_KEY: "",
     CLOUDINARY_API_SECRET: "",
+
+    GEOCODER_PROVIDER: "mapquest",
+    GEOCODER_API_KEY: "",
+    MAPBOX_ACCESS_TOKEN: "",
 
     SMTP_HOST: "sandbox.smtp.mailtrap.io",
     SMTP_PORT: "2525",
@@ -20,10 +23,6 @@ const nextConfig = {
     SMTP_PASSWORD: "",
     SMTP_FROM_EMAIL: "noreply@bookit.com",
     SMTP_FROM_NAME: "BookIT",
-
-    GEOCODER_PROVIDER: "mapquest",
-    GEOCODER_API_KEY: "",
-    MAPBOX_ACCESS_TOKEN: "",
 
     NEXTAUTH_SECRET: "KSDFJKLSDJFLKSDFJSLDKF934KJLDJGDLKGFJDF",
     REVALIDATE_TOKEN: "JK34J50JSDKFLJSDKF034I5DKFJSDK4IJFKSDJFL",

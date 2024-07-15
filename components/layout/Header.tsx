@@ -12,8 +12,12 @@ const Header = () => {
 
   const { data } = useSession();
 
+  console.log(data);
+
   useEffect(() => {
     if (data) {
+      console.log(data?.user?.email);
+
       dispatch(setUser(data?.user));
       dispatch(setIsAuthenticated(true));
     }
